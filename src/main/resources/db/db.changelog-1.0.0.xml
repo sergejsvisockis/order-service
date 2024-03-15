@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="1" author="svisockis">
+        <createTable tableName="orders">
+            <column name="id" type="java.sql.Types.BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="user_id" type="uuid">
+                <constraints nullable="false"/>
+            </column>
+            <column name="order_date" type="java.sql.Types.DATE"/>
+        </createTable>
+
+        <createTable tableName="order_item">
+            <column name="item_id" type="uuid">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="item_name" type="java.sql.Types.VARCHAR(45)"/>
+            <column name="unit_price" type="java.sql.Types.DOUBLE"/>
+            <column name="quantity" type="java.sql.Types.INTEGER"/>
+            <column name="order_id" type="java.sql.Types.BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint baseTableName="order_item" baseColumnNames="order_id"
+                                 constraintName="order_id_fk"
+                                 referencedTableName="orders"
+                                 referencedColumnNames="id"/>
+
+    </changeSet>
+
+</databaseChangeLog>

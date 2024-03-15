@@ -1,0 +1,18 @@
+spring:
+  liquibase:
+    change-log: classpath:db/db.changelog-persistence.xml
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+springdoc:
+  swagger-ui:
+    enabled: true
