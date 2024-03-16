@@ -46,11 +46,14 @@ public class OrderServiceImpl implements OrderService {
     @Transactional
     public OrderCreatedResponse save(UUID userId, OrderRequest request) {
         List<OrderItemRequest> modifiedItems = calculateDiscount(request);
+
         Order order = new Order();
         order.setOrderDate(LocalDate.now());
         order.setUserId(userId);
         List<OrderItem> orderItems = orderItemMapper.map(modifiedItems);
         order.setOrderItems(orderItems);
+        order.getOrderItems().forEach(item -> item.setOrder(order));
+
         Order savedOrder = orderRepository.save(order);
         return new OrderCreatedResponse(savedOrder.getId());
     }
