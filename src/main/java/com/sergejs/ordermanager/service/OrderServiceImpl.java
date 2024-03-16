@@ -26,7 +26,7 @@ import java.util.stream.Stream;
 public class OrderServiceImpl implements OrderService {
 
     private static final Double DISCOUNT_TEN_PERCENT = 0.10;
-    private static final Double DISCOUNT_FIFTEEN_PERCENT = 0.10;
+    private static final Double DISCOUNT_FIFTEEN_PERCENT = 0.15;
 
     private final OrderMapper orderMapper;
     private final OrderItemMapper orderItemMapper;
