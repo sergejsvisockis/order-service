@@ -3,7 +3,6 @@ package com.sergejs.orderservice.service;
 import com.sergejs.orderservice.dto.request.OrderItemRequest;
 import com.sergejs.orderservice.dto.request.OrderRequest;
 import com.sergejs.orderservice.dto.response.OrderResponse;
-import com.sergejs.orderservice.mapper.OrderItemMapper;
 import com.sergejs.orderservice.mapper.OrderMapper;
 import com.sergejs.orderservice.model.Order;
 import com.sergejs.orderservice.repository.OrderRepository;
@@ -25,9 +24,6 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class OrderServiceImplTest {
-
-    @Mock
-    private OrderItemMapper orderItemMapper;
 
     @Mock
     private OrderMapper orderMapper;
