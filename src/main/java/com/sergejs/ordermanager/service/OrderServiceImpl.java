@@ -58,7 +58,7 @@ public class OrderServiceImpl implements OrderService {
         return new OrderCreatedResponse(savedOrder.getId());
     }
 
-    private List<OrderItemRequest> calculateDiscount(OrderRequest request) {
+    protected List<OrderItemRequest> calculateDiscount(OrderRequest request) {
         return request.getOrderItems()
                 .stream()
                 .collect(Collectors.groupingBy(OrderItemRequest::getItemName))
@@ -80,14 +80,16 @@ public class OrderServiceImpl implements OrderService {
     }
 
     private void calculateDiscount(List<OrderItemRequest> items, Double discount) {
-        items.forEach(item -> item.setUnitPrice(item.getUnitPrice()
-                .subtract(item.getUnitPrice()
-                        .multiply(BigDecimal.valueOf(discount))))
+        items.forEach(item -> {
+                    BigDecimal unitPrice = item.getUnitPrice();
+                    item.setUnitPrice(unitPrice.subtract(unitPrice
+                            .multiply(BigDecimal.valueOf(discount))));
+                }
         );
     }
 
-    private static int getNumberOfItemsOfTheSameName(List<OrderItemRequest> group) {
-        return group.stream()
+    private Integer getNumberOfItemsOfTheSameName(List<OrderItemRequest> items) {
+        return items.stream()
                 .mapToInt(OrderItemRequest::getQuantity)
                 .sum();
     }
