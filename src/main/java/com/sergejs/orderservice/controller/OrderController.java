@@ -1,10 +1,10 @@
-package com.sergejs.ordermanager.controller;
+package com.sergejs.orderservice.controller;
 
-import com.sergejs.ordermanager.dto.request.OrderRequest;
-import com.sergejs.ordermanager.dto.response.OrderCreatedResponse;
-import com.sergejs.ordermanager.dto.response.OrderResponse;
-import com.sergejs.ordermanager.dto.response.TotalPriceResponse;
-import com.sergejs.ordermanager.service.OrderService;
+import com.sergejs.orderservice.dto.request.OrderRequest;
+import com.sergejs.orderservice.dto.response.OrderCreatedResponse;
+import com.sergejs.orderservice.dto.response.OrderResponse;
+import com.sergejs.orderservice.dto.response.TotalPriceResponse;
+import com.sergejs.orderservice.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

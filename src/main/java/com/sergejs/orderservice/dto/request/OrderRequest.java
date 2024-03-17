@@ -1,4 +1,4 @@
-package com.sergejs.ordermanager.dto.request;
+package com.sergejs.orderservice.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

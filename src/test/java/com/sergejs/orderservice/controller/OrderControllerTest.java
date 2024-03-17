@@ -1,9 +1,9 @@
-package com.sergejs.ordermanager.controller;
+package com.sergejs.orderservice.controller;
 
-import com.sergejs.ordermanager.OrderManagerApplication;
-import com.sergejs.ordermanager.model.Order;
-import com.sergejs.ordermanager.model.OrderItem;
-import com.sergejs.ordermanager.repository.OrderRepository;
+import com.sergejs.orderservice.Application;
+import com.sergejs.orderservice.model.Order;
+import com.sergejs.orderservice.model.OrderItem;
+import com.sergejs.orderservice.repository.OrderRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -25,7 +25,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest(classes = {
-        OrderManagerApplication.class
+        Application.class
 })
 @AutoConfigureMockMvc
 public class OrderControllerTest {

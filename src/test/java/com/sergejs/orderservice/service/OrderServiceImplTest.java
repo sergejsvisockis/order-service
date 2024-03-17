@@ -1,12 +1,12 @@
-package com.sergejs.ordermanager.service;
+package com.sergejs.orderservice.service;
 
-import com.sergejs.ordermanager.dto.request.OrderItemRequest;
-import com.sergejs.ordermanager.dto.request.OrderRequest;
-import com.sergejs.ordermanager.dto.response.OrderResponse;
-import com.sergejs.ordermanager.mapper.OrderItemMapper;
-import com.sergejs.ordermanager.mapper.OrderMapper;
-import com.sergejs.ordermanager.model.Order;
-import com.sergejs.ordermanager.repository.OrderRepository;
+import com.sergejs.orderservice.dto.request.OrderItemRequest;
+import com.sergejs.orderservice.dto.request.OrderRequest;
+import com.sergejs.orderservice.dto.response.OrderResponse;
+import com.sergejs.orderservice.mapper.OrderItemMapper;
+import com.sergejs.orderservice.mapper.OrderMapper;
+import com.sergejs.orderservice.model.Order;
+import com.sergejs.orderservice.repository.OrderRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

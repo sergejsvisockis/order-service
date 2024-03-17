@@ -1,9 +1,9 @@
-package com.sergejs.ordermanager.service;
+package com.sergejs.orderservice.service;
 
-import com.sergejs.ordermanager.dto.request.OrderRequest;
-import com.sergejs.ordermanager.dto.response.OrderCreatedResponse;
-import com.sergejs.ordermanager.dto.response.OrderResponse;
-import com.sergejs.ordermanager.dto.response.TotalPriceResponse;
+import com.sergejs.orderservice.dto.request.OrderRequest;
+import com.sergejs.orderservice.dto.response.OrderCreatedResponse;
+import com.sergejs.orderservice.dto.response.OrderResponse;
+import com.sergejs.orderservice.dto.response.TotalPriceResponse;
 
 import java.time.LocalDate;
 import java.util.List;

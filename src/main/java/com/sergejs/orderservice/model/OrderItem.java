@@ -1,4 +1,4 @@
-package com.sergejs.ordermanager.model;
+package com.sergejs.orderservice.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

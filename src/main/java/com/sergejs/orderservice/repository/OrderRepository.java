@@ -1,6 +1,6 @@
-package com.sergejs.ordermanager.repository;
+package com.sergejs.orderservice.repository;
 
-import com.sergejs.ordermanager.model.Order;
+import com.sergejs.orderservice.model.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

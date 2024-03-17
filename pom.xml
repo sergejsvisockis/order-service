@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.sergejs.ordermanager</groupId>
-    <artifactId>order-manager</artifactId>
+    <artifactId>order-service</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -92,5 +92,27 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <classifier>fat</classifier>
+                    <attach>false</attach>
+                    <mainClass>com.sergejs.orderservice.Application</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

@@ -1,7 +1,7 @@
-package com.sergejs.ordermanager.mapper;
+package com.sergejs.orderservice.mapper;
 
-import com.sergejs.ordermanager.dto.response.OrderResponse;
-import com.sergejs.ordermanager.model.Order;
+import com.sergejs.orderservice.dto.response.OrderResponse;
+import com.sergejs.orderservice.model.Order;
 import org.mapstruct.Mapper;
 
 import java.util.List;
