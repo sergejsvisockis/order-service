@@ -15,6 +15,7 @@
         <spring-boot.version>3.2.3</spring-boot.version>
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <springdoc-openapi-ui.version>2.4.0</springdoc-openapi-ui.version>
+        <hamcrest-junit.version>2.0.0.0</hamcrest-junit.version>
     </properties>
 
     <dependencies>
@@ -59,6 +60,10 @@
             <artifactId>h2</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <scope>test</scope>
@@ -66,6 +71,12 @@
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-junit</artifactId>
+            <version>${hamcrest-junit.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
