@@ -10,9 +10,9 @@ import com.sergejs.orderservice.mapper.OrderMapper;
 import com.sergejs.orderservice.model.Order;
 import com.sergejs.orderservice.model.OrderItem;
 import com.sergejs.orderservice.repository.OrderRepository;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
