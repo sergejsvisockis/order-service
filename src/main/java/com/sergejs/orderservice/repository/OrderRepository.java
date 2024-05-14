@@ -16,7 +16,7 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
             "LEFT JOIN FETCH o.orderItems WHERE o.userId = :userId")
     List<Order> findAllOrdersByUserId(@Param("userId") UUID userId);
 
-    @Query("SELECT SUM(oi.unitPrice) FROM Order o " +
+    @Query("SELECT SUM(oi.unitPrice * oi.quantity) FROM Order o " +
             "JOIN o.orderItems oi " +
             "WHERE o.orderDate " +
             "BETWEEN :fromDate AND :toDate " +
