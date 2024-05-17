@@ -2,10 +2,10 @@ spring:
   liquibase:
     change-log: classpath:db/db.changelog-persistence.xml
   datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://db:5432/postgres
-    username: postgres
-    password: postgres
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
   h2:
     console:
       enabled: true
