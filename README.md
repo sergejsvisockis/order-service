@@ -23,3 +23,14 @@ Technical requirements:
 - Spring boot 3
 - Jpa & Hibernate
 - No spring security is needed
+
+## Scaling horizontally
+
+To run 10 instances of the order-service in a Docker Swarm Cluster run the following command:
+
+```shell
+docker-compose up --scale order-service=10
+```
+
+Since this task is for experimentation purposes we assume that our traffic increases up to the 10k requests per second,
+therefore we could scale horizontally by adding more instances of hte same application and the load balancing. 
