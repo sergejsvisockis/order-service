@@ -26,11 +26,45 @@ Technical requirements:
 
 ## Scaling horizontally
 
+### Functional requirements
+
+Let's imagine that the marketing campaign takes place and once per quarter (3 months) the service experiences an
+unusual number of orders for the whole week.
+
+Due to the aforementioned the system just comes down periodically.
+
+### Non-functional requirements
+
+During the Grafana dashboard measures (let's leave it behind in the scope of this task) it was identified
+that an overall system is experiencing a particularly high number of requests at about 10k per second
+for both reads and writes with deviation 2-3k.
+
+* 10k requests per second
+
+## Scaling horizontally - the solution
+
+Since this task is for experimentation purposes we assume that our traffic increases up to 10k requests per second,
+therefore we could scale horizontally by adding more instances of the same application and the load balancing.
+
 To run 10 instances of the order-service in a Docker Swarm Cluster run the following command:
 
 ```shell
 docker-compose up --scale order-service=10
 ```
 
-Since this task is for experimentation purposes we assume that our traffic increases up to the 10k requests per second,
-therefore we could scale horizontally by adding more instances of hte same application and the load balancing. 
+Since strong consistency is one of the key non-functional requirements of this application an SQL database is being
+used.
+Relational databases have one drawback in the sense that relational database quite challenging to scale horizontally
+due to the ACID guarantees.
+Besides that, such a huge number of database reads could potentially be a bottleneck due to the latency and network
+bandwidth.
+A connection pool has to be used as well since the database connection opening is an expensive operation.
+
+Since an application is experiencing a high load occasionally (once in 3 months) leveraging the local cache in each
+instance of the distributed application might be more applicable. This particular case require neither a distributed
+cache nor patterns like CQRS. At the same time a lot depends on other non-functional requirements that might be in
+place.
+
+For the local in-memory cache a Caffeine cahce is being used. Since there is a high load occasionally from multiple
+threads simultaneously Caffeine cache provides a robust capabilities to achieve a higher performance especially due to
+its circular buffer data structure-based implementation.

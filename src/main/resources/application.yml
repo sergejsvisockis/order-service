@@ -6,9 +6,11 @@ spring:
     url: jdbc:postgresql://db:5432/postgres
     username: postgres
     password: postgres
-  h2:
-    console:
-      enabled: true
+    hikari:
+      connection-timeout: 60_000
+      idle-timeout: 30_000
+      max-lifetime: 3_000_000
+      maximum-pool-size: 500
   jpa:
     hibernate:
       ddl-auto: none

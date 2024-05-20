@@ -32,7 +32,7 @@ class OrderServiceImplTest {
     private OrderRepository orderRepository;
 
     @InjectMocks
-    private OrderServiceImpl orderService;
+    private DefaultOrderService orderService;
 
     @Test
     void shouldGetAllOrders() {

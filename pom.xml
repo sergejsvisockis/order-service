@@ -16,6 +16,8 @@
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <springdoc-openapi-ui.version>2.4.0</springdoc-openapi-ui.version>
         <hamcrest-junit.version>2.0.0.0</hamcrest-junit.version>
+        <embedded-redis.version>1.4.3</embedded-redis.version>
+        <hibernate-ehcache.version>5.6.15.Final</hibernate-ehcache.version>
     </properties>
 
     <dependencies>
@@ -30,6 +32,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -61,6 +67,10 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <scope>test</scope>
@@ -83,6 +93,12 @@
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-junit</artifactId>
             <version>${hamcrest-junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.codemonstur</groupId>
+            <artifactId>embedded-redis</artifactId>
+            <version>${embedded-redis.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

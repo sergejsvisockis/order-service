@@ -23,7 +23,7 @@ import java.util.stream.Stream;
 
 @Service
 @RequiredArgsConstructor
-public class OrderServiceImpl implements OrderService {
+public class DefaultOrderService implements OrderService {
 
     private static final Double DISCOUNT_TEN_PERCENT = 0.10;
     private static final Double DISCOUNT_FIFTEEN_PERCENT = 0.15;
