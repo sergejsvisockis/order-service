@@ -54,8 +54,8 @@ docker-compose up --scale order-service=10
 
 Due to the fact strong consistency is one of the key non-functional requirements of this application an SQL database
 is being used.
-Relational databases have one drawback in the sense that relational database quite challenging to scale horizontally
-due to the ACID guarantees.
+Relational databases have one drawback in the sense that these are quite challenging to scale horizontally due to
+the ACID guarantees.
 Besides that, such a huge number of database reads could potentially be a bottleneck due to the latency and network
 bandwidth.
 A connection pool has to be used as well since the database connection opening is an expensive operation.
@@ -75,6 +75,7 @@ second daily then perhaps it would make sense to have a batching and queuing mec
 sense to make a database sharding. This particular case is pretty straightforward and the connection pooling is more
 than enough.
 
-There is also no place for a CQRS since the number of read and write operations is almost the same with a minor deviation
-of 2-3k during the peak. Also, considering that it takes place only once in 3 months the CQRS will lead to an accidental
-complexity meanwhile increasing the support cost. It would also be challenging to achieve a strong consistency.
+There is also no place for a CQRS since the number of read and write operations is almost the same with a minor
+deviation of 2-3k during the peak. Also, considering that it takes place only once in 3 months the CQRS will lead to an
+accidental complexity meanwhile increasing the support cost. It would also be challenging to achieve a strong
+consistency.
