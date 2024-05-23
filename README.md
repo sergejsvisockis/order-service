@@ -66,15 +66,15 @@ cache a Caffeine cahce is being used. Since there is a high load occasionally fr
 Caffeine cache provides a robust capabilities to achieve a higher performance especially due to its circular buffer data
 structure-based implementation.
 
-When it comes to a high number of writes then due to the fact that the database connection opening is quite an expensive
+When it comes to a high number of writes then because the database connection opening is quite expensive
 operation a proper connection pooling mechanism has to be in place.
-Since the high load is in place only once er quarter (3 months) there is not need for an additional batch save neither
-queuing with scheduling mechanism commonly applied ion this case scenario.
+Since the high load is in place only once per quarter (3 months) there is no need for an additional batch save neither
+queuing with a scheduling mechanism commonly applied in this case scenario.
 At the same time if non-functional requirements do eventually change and the load increases up to the 10k requests per
-second daily then perhaps it would make sense to have a batching and queuing mechanism. In that case it would also make
-sense to make a database sharding. This particular case if pretty straightforward and the connection pooling is more
+second daily then perhaps it would make sense to have a batching and queuing mechanism. In that case, it would also make
+sense to make a database sharding. This particular case is pretty straightforward and the connection pooling is more
 than enough.
 
-There is also no place for a CQRS since the number of read and write operations is almost the same with minor deviation
+There is also no place for a CQRS since the number of read and write operations is almost the same with a minor deviation
 of 2-3k during the peak. Also, considering that it takes place only once in 3 months the CQRS will lead to an accidental
 complexity meanwhile increasing the support cost. It would also be challenging to achieve a strong consistency.
