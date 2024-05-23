@@ -34,7 +34,7 @@ public class CacheableOrderService implements OrderService {
                 .build(orderService::getAllOrders);
         this.totalPriceCache = Caffeine.newBuilder()
                 .maximumSize(3_000)
-                .refreshAfterWrite(12, TimeUnit.SECONDS)
+                .refreshAfterWrite(3, TimeUnit.SECONDS)
                 .expireAfterAccess(60, TimeUnit.SECONDS)
                 .build(key -> orderService.getTotalPriceWithinRange(key.getFromDate(),
                         key.getToDate(), key.getUserId()));

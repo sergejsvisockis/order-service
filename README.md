@@ -52,8 +52,8 @@ To run 10 instances of the order-service in a Docker Swarm Cluster run the follo
 docker-compose up --scale order-service=10
 ```
 
-Since strong consistency is one of the key non-functional requirements of this application an SQL database is being
-used.
+Due to the fact strong consistency is one of the key non-functional requirements of this application an SQL database
+is being used.
 Relational databases have one drawback in the sense that relational database quite challenging to scale horizontally
 due to the ACID guarantees.
 Besides that, such a huge number of database reads could potentially be a bottleneck due to the latency and network
@@ -61,8 +61,8 @@ bandwidth.
 A connection pool has to be used as well since the database connection opening is an expensive operation.
 
 Since an application is experiencing a high load occasionally (once in 3 months) leveraging the local cache in each
-instance of the distributed application might be more applicable. This particular case require neither a distributed
-cache nor patterns like CQRS. At the same time a lot depends on other non-functional requirements that might be in
+instance of the distributed application might be more applicable. This particular case requires neither a distributed
+cache nor patterns like CQRS. At the same time, a lot depends on other non-functional requirements that might be in
 place.
 
 For the local in-memory cache a Caffeine cahce is being used. Since there is a high load occasionally from multiple
