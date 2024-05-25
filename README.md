@@ -72,8 +72,9 @@ Since the high load is in place only once per quarter (3 months) there is no nee
 queuing with a scheduling mechanism commonly applied in this case scenario.
 At the same time if non-functional requirements do eventually change and the load increases up to the 10k requests per
 second daily then perhaps it would make sense to have a batching and queuing mechanism. In that case, it would also make
-sense to make a database sharding. This particular case is pretty straightforward and the connection pooling is more
-than enough.
+sense to make a database sharding. In addition, it would also be beneficial to leverage a distributed caching in that
+case despite latency and accidental complexity. This particular case is pretty straightforward and the connection
+pooling and the local caching are more than enough.
 
 There is also no place for a CQRS since the number of read and write operations is almost the same with a minor
 deviation of 2-3k during the peak. Also, considering that it takes place only once in 3 months the CQRS will lead to an
