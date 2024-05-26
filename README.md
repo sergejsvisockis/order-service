@@ -62,8 +62,8 @@ A connection pool has to be used as well since the database connection opening i
 
 Since an application is experiencing a high load occasionally (once in 3 months) leveraging the local cache in each
 instance of the distributed application might be more applicable instead of the distributed one. For the local in-memory
-cache a Caffeine cahce is being used. Since there is a high load occasionally from multiple threads simultaneously
-Caffeine cache provides a robust capabilities to achieve a higher performance especially due to its circular buffer data
+cache a Caffeine cache is being used. Since there is a high load occasionally from multiple threads simultaneously
+Caffeine cache provides robust capabilities to achieve a higher performance especially due to its circular buffer data
 structure-based implementation.
 
 When it comes to a high number of writes then because the database connection opening is quite expensive
@@ -72,7 +72,7 @@ Since the high load is in place only once per quarter (3 months) there is no nee
 queuing with a scheduling mechanism commonly applied in this case scenario.
 At the same time if non-functional requirements do eventually change and the load increases up to the 10k requests per
 second daily then perhaps it would make sense to have a batching and queuing mechanism. In that case, it would also make
-sense to make a database sharding. In addition, it would also be beneficial to leverage a distributed caching in that
+sense to make a database sharding. In addition, it would also be beneficial to leverage distributed caching in that
 case despite latency and accidental complexity. This particular case is pretty straightforward and the connection
 pooling along with the local caching are more than enough.
 
