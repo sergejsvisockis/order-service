@@ -16,8 +16,6 @@
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <springdoc-openapi-ui.version>2.4.0</springdoc-openapi-ui.version>
         <hamcrest-junit.version>2.0.0.0</hamcrest-junit.version>
-        <embedded-redis.version>1.4.3</embedded-redis.version>
-        <hibernate-ehcache.version>5.6.15.Final</hibernate-ehcache.version>
     </properties>
 
     <dependencies>
