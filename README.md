@@ -46,7 +46,7 @@ for both reads and writes with deviation 2-3k.
 Since this task is for experimentation purposes we assume that our traffic increases up to 10k requests per second,
 therefore we could scale horizontally by adding more instances of the same application and the load balancing.
 
-To run "N" number of instances of the order-service in a Docker Swarm Cluster run the following command:
+To run "N" number of instances of the order-service in a Docker environment run the following command:
 
 ```shell
 docker-compose up --scale order-service=N
